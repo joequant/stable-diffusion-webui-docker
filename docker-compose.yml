@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+    image:
+        build: .
+        volumes:
+           - $HOME/dockerx:/dockerx
+        ports:
+           - 7860:7860
+        devices:
+           - /dev/kfd
+           - /dev/dri
+        ipc: host
