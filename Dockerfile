@@ -2,6 +2,7 @@
 FROM ubuntu:20.04
 COPY install-pkgs.sh .
 RUN /bin/bash ./install-pkgs.sh
+RUN apt-get install -y rocm-libs
 WORKDIR /xdocker
 RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 WORKDIR stable-diffusion-webui

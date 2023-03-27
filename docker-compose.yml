@@ -3,9 +3,11 @@ services:
     image:
         build: .
         volumes:
-           - $HOME/dockerx:/dockerx
-        ports:
-           - 7860:7860
+           - ./Stable-diffusion:/xdocker/stable-diffusion-webui/models/Stable-diffusion
+           - ./logs:/xdocker/stable-diffusion-webui/logs
+           - ./outputs:/xdocker/stable-diffusion-webui/outputs
+        network_mode:
+           host
         devices:
            - /dev/kfd
            - /dev/dri
