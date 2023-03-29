@@ -2,10 +2,11 @@
 FROM ubuntu:20.04
 COPY install-pkgs.sh .
 RUN /bin/bash ./install-pkgs.sh
-RUN apt-get install -y rocm-libs
+RUN apt-get install -y rocm-libs --allow-unauthenticated
 WORKDIR /xdocker
 RUN git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 WORKDIR stable-diffusion-webui
-COPY install.sh run.sh ./
+COPY install.sh ./
 RUN /bin/bash ./install.sh
+COPY run.sh ./
 CMD /bin/bash ./run.sh
