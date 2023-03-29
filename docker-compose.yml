@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-    image:
+    image-roc5:
         build: .
         volumes:
            - ./Stable-diffusion:/xdocker/stable-diffusion-webui/models/Stable-diffusion
